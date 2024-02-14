@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - go version
+      - go mod download
+      # - go list -m all
+
+  build:
+    commands:
+      - go build -o astro
+      - go test ./...
+
+artifacts:
+  files: astro
