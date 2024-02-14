@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"github.com/sakshi-s7works/program/database"
+	"github.com/sakshi-s7works/program/database/models"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
