@@ -1,10 +1,20 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
+	"errors"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
-	"github.com/sakshi-s7works/program/database"
-	"github.com/sakshi-s7works/program/database/models"
+
+	"github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/gin"
+	"github.com/sakshi-s7works/astro/config"
+	"github.com/sakshi-s7works/astro/database"
+	"github.com/sakshi-s7works/astro/database/models"
+	"gorm.io/gorm"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
